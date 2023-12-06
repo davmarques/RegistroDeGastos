@@ -1,1 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+      struct Gasto {char nome[50];float valor;
+    char data[20];
+};
 
