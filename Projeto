@@ -76,3 +76,13 @@ int main() {
 
     return 0;
 }
+void inserirGasto(struct Gasto *gastos, int *numGastos) {
+    printf("Digite o nome do gasto: ");
+    scanf("%s", gastos[*numGastos].nome);
+    printf("Digite o valor do gasto: ");
+    scanf("%f", &gastos[*numGastos].valor);
+    printf("Digite a data do gasto (DD/MM/AAAA): ");
+    scanf("%s", gastos[*numGastos].data);
+
+    (*numGastos)++;
+}
