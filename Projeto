@@ -2,7 +2,67 @@
 #include <stdlib.h>
 #include <string.h>
 
-      struct Gasto {char nome[50];float valor;
+struct Gasto {
+    char nome[50];
+    float valor;
     char data[20];
 };
 
+void inserirGasto(struct Gasto *gastos, int *numGastos);
+void listarGastos(struct Gasto *gastos, int numGastos);
+void buscarGasto(struct Gasto *gastos, int numGastos);
+void editarGasto(struct Gasto *gastos, int numGastos);
+void removerGasto(struct Gasto *gastos, int *numGastos);
+void mostrarSomaEMedia(struct Gasto *gastos, int numGastos);
+void salvarEmArquivo(struct Gasto *gastos, int numGastos);
+
+int main() {
+    struct Gasto gastos[100]; // Supondo que haverá no máximo 100 gastos
+    int numGastos = 0;
+    int opcao;
+
+    do {
+        printf("\nMenu:\n");
+        printf("1. Inserir novo gasto\n");
+        printf("2. Listar gastos\n");
+        printf("3. Buscar gasto\n");
+        printf("4. Editar gasto\n");
+        printf("5. Remover gasto\n");
+        printf("6. Mostrar soma e media dos gastos\n");
+        printf("7. Salvar em arquivo\n");
+        printf("0. Sair\n");
+        printf("Escolha a opcao: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                inserirGasto(gastos, &numGastos);
+                break;
+            case 2:
+                listarGastos(gastos, numGastos);
+                break;
+            case 3:
+                buscarGasto(gastos, numGastos);
+                break;
+            case 4:
+                editarGasto(gastos, numGastos);
+                break;
+            case 5:
+                removerGasto(gastos, &numGastos);
+                break;
+            case 6:
+                mostrarSomaEMedia(gastos, numGastos);
+                break;
+            case 7:
+                salvarEmArquivo(gastos, numGastos);
+                break;
+            case 0:
+                printf("Saindo do programa.\n");
+                break;
+            default:
+                printf("Opção inválida. Tente novamente.\n");
+        }
+    } while (opcao != 0);
+
+    return 0;
+}
