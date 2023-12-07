@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Estrutura para armazenar informações sobre um gasto
 struct Gasto {
     char nome[50];
     float valor;
     char data[20];
-};
 
 void inserirGasto(struct Gasto *gastos, int *numGastos);
 void listarGastos(struct Gasto *gastos, int numGastos);
