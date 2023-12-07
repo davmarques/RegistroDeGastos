@@ -75,14 +75,12 @@ void inserirGasto(struct Gasto *gastos, int *numGastos) {
     (*numGastos)++;
 }
 
-    void listarGastos(ListaGastos *lista) {
-        printf("Lista de gastos:\n");
-        for (int i = 0; i < lista->quantidade; i++) {
-            printf("Descrição: %s\n", lista->gastos[i].descricao);
-            printf("Valor: %.2f\n", lista->gastos[i].valor);
-            printf("Data: %s\n", lista->gastos[i].data);
-            printf("-----------------\n");
-        }
+void listarGastos(struct Gasto *gastos, int numGastos) {
+    printf("\nLista de Gastos:\n");
+    printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
+    for (int i = 0; i < numGastos; i++) {
+        printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
     }
+}
 
     return 0;
