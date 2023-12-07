@@ -64,5 +64,15 @@ int main() {
         }
     } while (opcao != 0);
 
+    void listarGastos(ListaGastos *lista) {
+        printf("Lista de gastos:\n");
+        for (int i = 0; i < lista->quantidade; i++) {
+            printf("Descrição: %s\n", lista->gastos[i].descricao);
+            printf("Valor: %.2f\n", lista->gastos[i].valor);
+            printf("Data: %s\n", lista->gastos[i].data);
+            printf("-----------------\n");
+        }
+    }
+
     return 0;
 }
